@@ -45,15 +45,5 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  process :store_dimensions
 
-  private
-
-  def store_dimensions
-    if file && model
-      img = ::Magick::Image::read(file.file).first
-      model.width = img.columns
-      model.height = img.rows
-    end
-  end
 end
