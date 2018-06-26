@@ -1,51 +1,83 @@
 
-<main class="container col-md-9">
+<main>
     <!-- Grid -->
-    
-<div class="w3-row">
-  <!-- Blog entries -->
-<% @posts.each do |post| %>             <!-- her-->  
-  <div class="w3-col l8 s12">
-    <!-- Blog entry -->
-    <div class="w3-card-4 w3-margin w3-white">
-      <%= image_tag post.image_url%>        <!-- her-->
-      <div class="w3-container">
-        <h2><b><%= post.title %></b></h3>    <!-- her-->
-        <h7><span class="w3-opacity"><%= post.created_at%></td></span></h5>    <!-- her-->
+<div class="container">    
+  <div class="row">
+
+  <div class="col-sm">
+    <% @posts.each do |post| %>             <!-- her-->  
+    <div class="col s13">
+      <!-- Blog entry -->
+      <div class="w3-card-4 w3-margin w3-white">
+        <%= image_tag post.image_url.to_s%>        <!-- her-->
+        <div class="w3-container">
+          <h2><b><%= post.title %></b></h3>    <!-- her-->
+          <h7><span class="w3-opacity"><%= post.created_at%></td></span></h5>    <!-- her-->
       </div>
-  
-      <div class="w3-container">
-        <p><td><%= post.content %></td></p>   <!-- her-->
-        <div class="w3-row">
-          <div class="w3-col m8 s12">
-            <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Show', post_path(post) %> »</b></button></p>  <!-- her-->
-          </div>
-          <div class="w3-col m4 w3-hide-small">
-            <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+    
+        <div class="w3-container">
+          <p><td><%= post.content %></td></p>   <!-- her-->
+          <div class="w3-row">
+            <div class="w3-col m8 s12">
+              <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Show', post_path(post) %> »</b></button></p>  <!-- her-->
+            </div>
+            <div class="w3-col m4 w3-hide-small">
+              <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+            </div>
           </div>
         </div>
       </div>
+      <hr>
+    </div>
+    <% end %>
     </div>
     <hr>
-  </div>
-  <% end %>
-  <hr> 
+    <div class="col-sm">
+        <div class="w3-col l7">
+    <!-- About Card -->
+    <div class="w3-card w3-margin w3-margin-top">
+    <img src="./image/avatar_g.jpg" style="width:100%">
+      <div class="w3-container w3-white">
+        <h4><b>My Name</b></h4>
+        <p>Just me</p>
 
-  <!-- Introduction menu My Name -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="./image/avatar_g.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>My Name</b></h4>
-      <p>Just me</p>
-
-      <!-- Contact -->
-        <p>Let us book your next trip!</p>
-        <i class="fa fa-map-marker"  style="width:30px; color: brown"; ></i> Ha Noi - Viet Nam<br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: +964979447<br>
-        <i class="fa fa-envelope" style="width:30px; "> </i> Email: sylongtd@gmail.com<br>
+        <!-- Contact -->
+          <p>Let us book your next trip!</p>
+          <i class="fa fa-map-marker"  style="width:30px; color: brown"; ></i> Ha Noi - Viet Nam<br>
+          <i class="fa fa-phone" style="width:30px"></i> Phone: +964979447<br>
+          <i class="fa fa-envelope" style="width:30px; "> </i> Email: sylongtd@gmail.com<br>
+        </div>
+    </div><hr>
+    
+    <!-- Posts -->
+    <div class="w3-card w3-margin">
+      <div class="w3-container w3-padding">
+        <h4>Popular Posts</h4>
       </div>
-  </div><hr>
+      <ul class="w3-ul w3-hoverable w3-white">
+        <li class="w3-padding-16">
+          <img src="./image/bridge.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="./image/img_nature_wide.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+        <li class="w3-padding-16">
+          <img src="./image/landscape-01.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Dorum</span><br>
+          <span>Ultricies congue</span>
+        </li>   
+        <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+          <img src="./image/landscape-01.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Mingsum</span><br>
+          <span>Lorem ipsum dipsum</span>
+        </li>  
+      </ul>
+    </div>
+    <hr> 
+    </div>
+  </div>  
 </main>
-

@@ -15,12 +15,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>body {background-color: #DCDCDC;}</style>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <nav class="navbar justify-content-center bg-light navbar-expand-sm navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand text-dark" href="#">Logo.Blog</a>
+        <a class="navbar-brand text-dark" href="http://localhost:3000/">Logo.Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,12 +36,18 @@
             <li class="nav-item">
               <a class="nav-link text-dark" href="#">Abount</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Contact</a>
-            </li>
+            
           </ul>
           
           <div class="form-inline my-2 my-md-0">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="search" id="search" placeholder="">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
+            &nbsp;&nbsp;
                 <a href="#"><i class="fa fa-github" style="font-size:30px;color:black"></i></a>
             &nbsp;&nbsp;
                 <a href="#"><i class="fa fa-instagram" style="font-size:30px;color:black"></i></a>
