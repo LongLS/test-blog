@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.paginate(:page => params[:page], :per_page => 2).order("created_at DESC")
+        @posts = Post.paginate(:page => params[:page], :per_page => 2).order("created_at DESC").where(["title LIKE ?", "%#{params[:search]}%"])
     end
 
     def create
