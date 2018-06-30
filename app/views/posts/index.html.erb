@@ -27,6 +27,8 @@
   </div>
   <% end %>
   <hr>
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
   
