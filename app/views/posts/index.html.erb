@@ -9,7 +9,7 @@
     <%= image_tag post.image_url.to_s%>        <!-- her-->    
     <div class="w3-container">
       <h3><b><%= post.title %></b></h3>
-      <h5>Title description, <span class="w3-opacity"><%= post.created_at%></span></h5>
+      <h5>Title description, <span class="w3-opacity"><%= post.created_at%> <br> <%=post.all_tags %></span></h5>
     </div>
 
     <div class="w3-container">
