@@ -9,11 +9,12 @@
     <%= image_tag post.image_url.to_s%>        <!-- her-->    
     <div class="w3-container">
       <h3><b><%= post.title %></b></h3>
-      <h5>Title description, <span class="w3-opacity"><%= post.created_at%> <br> <%=post.all_tags %></span></h5>
+      <h5>Title description <span class="w3-opacity"><%= post.created_at.to_time.strftime("%Y-%m-%d") %></span></h5>
+      <p>#<%=post.all_tags %></p>
     </div>
 
     <div class="w3-container">
-      <p><%= post.content %></p>
+      <p><%= post.content.truncate(100) %></p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Show', post_path(post) %> »</b></button></p>

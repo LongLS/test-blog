@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_06_30_101732) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
-    t.string "content"
+    t.text "content"
     t.string "sumary"
     t.string "image"
     t.text "users_id"
