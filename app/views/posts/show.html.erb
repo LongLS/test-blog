@@ -7,14 +7,25 @@
 ID: <%= @post.id %>
 </p>
 <p>
-Content: <%= @post.title %>
+Content: <%= @post.title %> <br>
+<%= @post.created_at.to_time.strftime("%Y-%m-%d") %>
+</p>
+<p>
+<%= image_tag @post.image_url.to_s%>
 </p>
 <p>
 Content: <%= @post.content %>
 </p>
 
-<hr>
+
+
+<br>
+&nbsp&nbsp<p><%= @post.comments.count %> Comments</p>
+    <%= render @post.comments %>
+    <h3>Add a comment:</h3>
+    <%= render 'comments/form'%>
+<br>
+
 <%= link_to "Back", posts_path %> &nbsp;&nbsp;&nbsp;
-<%= link_to "Edit", edit_post_path(@post) %> &nbsp;&nbsp;&nbsp;
-<%= link_to "Delete", post_path(@post),
-method: :delete,data: {confirm: 'Are you sure?'} %>
+<%= link_to "Edit Post", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%>
