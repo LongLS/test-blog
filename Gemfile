@@ -67,4 +67,4 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'ckeditor'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
-gem 'devise-bootstrap-views'
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
