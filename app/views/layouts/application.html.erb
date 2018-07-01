@@ -44,15 +44,15 @@
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
                     <%= form_tag posts_path, :method => 'get' do %>
-                        <%= text_field_tag :search, params[:search] %>
+                        <%= text_field_tag :search, params[:search]%>
                         <%= submit_tag "Search"%>
                     <% end %>
                 </div>
             </div>
             &nbsp;&nbsp;
-                <a href="#"><i class="fa fa-github" style="font-size:30px;color:black"></i></a>
+                <a href="https://github.com/RyoName"><i class="fa fa-github" style="font-size:30px;color:black"></i></a>
             &nbsp;&nbsp;
-                <a href="#"><i class="fa fa-instagram" style="font-size:30px;color:black"></i></a>
+                <a href="https://www.instagram.com/?hl=vi"><i class="fa fa-instagram" style="font-size:30px;color:black"></i></a>
             &nbsp;&nbsp;
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Info</button>
@@ -77,9 +77,51 @@
   <body>
     <%= yield %>
   </body>
-  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <div>
-    <p>© 2018 | Design & Developer by Le Sy Long <a target="_blank"></a></p>
-  </div>
-</footer>
+ <!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4 bg-dark text-white">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fa fa-facebook"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fa fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fa fa-google-plus"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fa fa-linkedin"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fa fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright |
+      <a href="https://www.facebook.com/lesylong911"> Design & Developer by Le Sy Long</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
 </html>

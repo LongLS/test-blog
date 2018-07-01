@@ -1,32 +1,35 @@
-<!DOCTYPE html>
-
-<head>
-    <title>Page Edit</title>
-</head>
-
-<h1>Edit Posts</h1>
+<div class="container">
 <%= form_for :post, url: post_path, method: :patch do |f| %>
-<p>
-<%= f.label :title %><br/>
-<%= f.text_field :title %><br/>
-</p>
-<p>
-<%= f.label :content %><br/>
-<%= f.cktext_area :content %><br/>
-</p>
-<p>
-<%= f.label :sumary %><br/>
-<%= f.text_area :sumary %><br/>
-<p>
-<%= f.label :image %><br/>
-<%= f.file_field :image %><br/>
-</p>
+      <div class="jumbotron">
+            <p>
+                <%= f.label :title %><br/>
+                <%= f.text_field :title, class: "form-control textarea" %><br/>
+            </p>
+            <p>
+                <%= f.label :sumary %><br/>
+                <%= f.text_area :sumary, class: "form-control textarea"%><br/>
+            </p>
+            <p>
+                <%= f.label :content %><br/>
+                <%= f.cktext_area :content %><br/>
+            </p>
+            <p>
+                <%= f.label :image %><br/>
+                <%= f.file_field :image %><br/>
+            </p>
 
-<p>
-<%= f.label :publish %><br/>
-<%= f.check_box :publish %><br/>
-</p>
+            <p>
+                <%= f.label :Tags %><br />
+                <%= f.text_area :all_tags, class: "form-control textarea"%>
+            </p>
 
-</p>
-<%= f.submit %>
-<% end %>
+            <p>
+                <%= f.label :publish %><br/>
+                <%= f.check_box :publish %><br/>
+            </p>
+
+            </p>
+                <%= f.submit %>
+      </div>
+    <% end %>
+    </div>

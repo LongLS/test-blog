@@ -66,3 +66,5 @@ gem 'mini_magick'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'ckeditor'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem 'devise-bootstrap-views'
