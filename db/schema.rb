@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_06_30_130802) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email"
-    t.string "name"
+    t.text "name"
     t.text "content"
     t.string "parents_id"
     t.bigint "post_id"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2018_06_30_130802) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "title"
+    t.text "title"
     t.text "content"
-    t.string "sumary"
+    t.text "sumary"
     t.string "image"
     t.text "users_id"
     t.boolean "publish"

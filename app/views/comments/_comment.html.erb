@@ -1,6 +1,47 @@
-<p><%= comment.email%></p>
-<p><%= comment.name%></p>
-<p><%= comment.content%></p>
-<p><%= time_ago_in_words(comment.created_at) %></p>
-
-<p><%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure'}%></p>
+<div class="container">
+    <div class="row border border-secondary">
+        <div class="comments col-md-9" id="comments">
+            <h3 class="mb-2">Comments</h3>
+            <!-- comment -->
+            <div class="comment mb-2 row ">
+                <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                    <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m103.jpg" alt="avatar"></a>
+                </div>
+                <div class="comment-content col-md-11 col-sm-10">
+                    <h6 class="small comment-meta">
+                    <p><%= comment.name%> | <%= comment.email%></p>
+                    <p><%= time_ago_in_words(comment.created_at) %> |
+                    <%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure'}%>  
+                    </p></h6>
+                    <div class="comment-body">
+                        <p>
+                            <p><%= comment.content%></p>
+                            <i class="fa fa-mail-reply" style="font-size:15px;color:blue"></i>
+                            <a href="" class="text-right small"><i class="ion-reply"></i> Reply</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- reply is indented -->
+                <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
+                    <div class="row">
+                        <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                            <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg" alt="avatar"></a>
+                        </div>
+                        <div class="comment-content col-md-11 col-sm-10 col-12">
+                            <h6 class="small comment-meta"><a href="#">phildownney</a> Today, 12:31</h6>
+                            <div class="comment-body">
+                                <p>Ut enim ad minim veniam, quis nostrud exercitat.
+                                    <br>
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <!-- /reply is indented -->
+            </div>
+            <!-- /comment -->
+        </div>
+    </div>
+</div>

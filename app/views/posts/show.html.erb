@@ -1,15 +1,15 @@
 <body>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container ">
 
       <div class="row">
 
         <!-- Post Content Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 bg-light">
 
           <!-- Title -->
-          <h1 class="mt-4"><%= @post.title %></h1>
+          <h1 class="mt-4 text-muted"><%= @post.title %></h1>
 
           <hr>
 
@@ -35,14 +35,9 @@
                 <%= render 'comments/form'%>
             <br>
           
-
           <!-- Comment with nested comments -->
           <div class="media mb-4">
             <div class="media-body">
-
-              
-
-              
 
             </div>
           </div>
@@ -114,9 +109,9 @@
       <!-- /.row -->
 
     </div>
+</div>
+
 <%= link_to "Back", posts_path %> &nbsp;&nbsp;&nbsp;
 <%= link_to "Edit Post", edit_post_path(@post) %>
 <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%>
-
-</div>
 </body>

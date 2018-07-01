@@ -41,6 +41,7 @@
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
     <div class="w3-container w3-white">
+    <img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m103.jpg" alt="avatar">
       <h4><b>Lê Sỹ Long</b></h4>
       <i class="fa fa-map-marker"  style="width:30px; color: brown"; ></i> Ha Noi - Viet Nam<br>
         <i class="fa fa-phone" style="width:30px"></i> Phone: +964979447<br>
@@ -50,7 +51,7 @@
   
   <!-- Posts -->
   <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
+    <div class="w3-container w3-padding bg-info text-light">
       <h4>Popular Posts</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
@@ -58,7 +59,7 @@
       <% @posts.each do |post| %>             <!-- her--> 
         <%= image_tag post.image_url.to_s%>
         <div class="w3-container">
-          <span><%= post.title %></span>
+          <span><%= post.title.truncate(20) %></span>
         </div>
       <% end %>
       </li>
@@ -69,13 +70,13 @@
  
   <!-- Labels / tags -->
   <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
+    <div class="w3-container w3-padding bg-secondary text-light">
       <h4>#Tags</h4>
     </div>
     <div class="w3-container w3-white">
     <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> 
     <% @posts.each do |post| %>
-      &nbsp;<span class="w3-tag w3-light-grey w3-small w3-margin-bottom"><%=post.all_tags %><span> 
+      &nbsp;<span class="badge badge-info"><%=post.all_tags %></span> 
     <% end %>
     </p>
     </div>
