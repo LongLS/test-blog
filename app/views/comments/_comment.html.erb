@@ -20,12 +20,17 @@
                     <div class="comment-body">
                         <p>
                             <p><%= comment.content%></p>
-                            <i class="fa fa-mail-reply" style="font-size:15px;color:blue"></i>
-                            <a href="" class="text-right small"><i class="ion-reply"></i> Reply</a>
+                            <i id="click" class="fa fa-mail-reply" style="font-size:15px;color:blue"></i>
+                            <a class="text-right small"> Reply</a>
                         </p>
+                        <input id="show" style="display: none" type="text" name="fname">
                     </div>
                 </div>
-                
+                    <script>
+                        $( "#click" ).click(function() {
+                            $( "#show" ).show( "slow" );
+                        });
+                    </script>
                 <!-- reply is indented -->
                 <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
                     <div class="row">
