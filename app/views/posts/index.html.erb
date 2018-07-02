@@ -1,34 +1,93 @@
-<h1>Posts#Index</h1>
+<!-- Grid -->
+<main class="container col-md-9">
+<div class="w3-row">
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <% @posts.each do |post| %>             <!-- her-->  
+  <div class="w3-card-4 w3-margin w3-white">
+    <%= image_tag post.image_url.to_s%>        <!-- her-->    
+    <div class="w3-container">
+      <h3><b><%= post.title %></b></h3>
+      <h5>Title description <span class="w3-opacity"><%= post.created_at.to_time.strftime("%Y-%m-%d") %></span></h5>
+      <p>#<%=post.all_tags %></p>
+    </div>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+    <div class="w3-container">
+      <p><%= post.sumary.truncate(85) %></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Read more', post_path(post) %> ...</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b> Comments</b> <span class="w3-tag"><%= post.comments.count %></span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <hr>
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 
-<div class="container">                                         
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-    <% if user_signed_in? %>
-      <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-      <% else %>
-      <li><%= link_to('Login', new_user_session_path)  %></li>
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+    <div class="w3-container w3-white">
+    <img class="mx-auto rounded-circle img-fluid" src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/12075023_564673083680913_2964526608096181537_n.jpg?_nc_cat=0&_nc_eui2=AeG0U_m5SsS9IP4X3SZlkgtkKnUJTvB2zD1Kg7oE5bkGgiQ3njUws_peJcNNqFzteYMYj6070BemeDljMmO10J27VWPEHfm1pCDFIO3gMju1Mg&oh=27efda4f98c2b359d12f9864a97cdc79&oe=5BA36E23" alt="avatar">
+      <h4><b>Lê Sỹ Long</b></h4>
+      <i class="fa fa-map-marker"  style="width:30px; color: brown"; ></i> Ha Noi - Viet Nam<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +964979447<br>
+        <i class="fa fa-envelope" style="width:30px; "> </i> Email: sylongtd@gmail.com<br>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding bg-info text-light">
+      <h4>Popular Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+      <% @posts.each do |post| %>             <!-- her--> 
+        <%= image_tag post.image_url.to_s%>
+        <div class="w3-container">
+          <span><%= post.title.truncate(20) %></span>
+        </div>
       <% end %>
+      </li>
+       
     </ul>
   </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding bg-secondary text-light">
+      <h4>#Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> 
+    <% @posts.each do |post| %>
+      &nbsp;<span class="badge badge-info"><%=post.all_tags %></span> 
+    <% end %>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
 </div>
 
-<div>
-<%= link_to 'Add', new_post_path %>
-        <% @posts.each do |post| %>
-        <tr>
-        <h1><%= post.title %></h1>
-        <td><%= post.content %></td>
-        <td><%= post.created_at%></td>
-        <td><%= link_to 'Show', post_path(post) %></td>
-        </tr>
-        <% end %>
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
 </div>
+</main>

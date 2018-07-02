@@ -1,0 +1,20 @@
+<%= bootstrap_form_for([@post, @post.comments.build]) do |f| %>
+    <p>
+        <%= f.text_area :email %>
+    </p>
+
+    <p>
+        <%= f.text_area :name%>
+    </p>
+    <br>
+    <p>
+        <%= f.text_area :content%>
+    </p>
+
+    <p>
+        <%= f.submit%>
+    </p>
+
+    
+<% end %>
+

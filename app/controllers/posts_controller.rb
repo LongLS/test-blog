@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.all
+        @posts = Post.paginate(:page => params[:page], per_page: 2).order("created_at DESC").where(["title LIKE ?", "%#{params[:search]}%"])
     end
 
     def create
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
     private
         def post_params
-        params.require(:post).permit(:title, :content, :sumary, :image, :users_id, :publish)
+        params.require(:post).permit(:title, :content, :sumary, :image, :all_tags, :users_id, :publish)
     end
     
 end

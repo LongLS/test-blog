@@ -61,4 +61,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
-gem "paperclip", "~> 6.0.0"
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+gem 'ckeditor'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
