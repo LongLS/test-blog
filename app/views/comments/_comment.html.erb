@@ -22,15 +22,15 @@
                             <p><%= comment.content%></p>
                             <i id="click" class="fa fa-mail-reply" style="font-size:15px;color:blue"></i>
                             <a class="text-right small"> Reply</a>
+                            <%= comment.parents_id%>
                         </p>
-                        <input id="show" style="display: none" type="text" name="fname">
                     </div>
                 </div>
                     <script>
                         $( "#click" ).click(function() {
                             $( "#show" ).show( "slow" );
                         });
-                    </script>
+                        </script>
                 <!-- reply is indented -->
                 <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
                     <div class="row">
@@ -40,10 +40,10 @@
                         <div class="comment-content col-md-11 col-sm-10 col-12">
                             <h6 class="small comment-meta"><a href="#">phildownney</a> Today, 12:31</h6>
                             <div class="comment-body">
-                                <p>Ut enim ad minim veniam, quis nostrud exercitat.
                                     <br>
-                                    
-                                </p>
+                                         <%= form_for([@post, @post.comments.build]) do |f| %>
+                                            <p ><%= f.text_area :parents_id, style: "#{'display:none'}", id: "#{'show'}"%></p>
+                                        <% end %>
                             </div>
                         </div>
                     </div>
