@@ -34,7 +34,8 @@ img {
   width: 100%;
   height: auto;
 }
-
+@import "social-share-button";
 /*
  *= require rails_bootstrap_forms
+ *= require social-share-button
  */

@@ -10,7 +10,7 @@
     <div class="w3-container">
       <h3><b><%= post.title %></b></h3>
       <h5>Title description <span class="w3-opacity"><%= post.created_at.to_time.strftime("%Y-%m-%d") %></span></h5>
-      <p class="badge badge-primary">#<%=post.all_tags %></p>
+      <p class="badge badge-primary">#<%=post.all_tags %><%= social_share_button_tag(post.title) %></p>
     </div>
 
     <div class="w3-container">

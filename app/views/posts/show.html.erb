@@ -11,12 +11,11 @@
 
           <!-- Title -->
           <h1 class="mt-4 text-muted"><%= @post.title %></h1>
-
           <hr>
 
           <!-- Date/Time -->
           <p><%= @post.created_at.to_time.strftime("%Y-%m-%d") %></p>
-
+          <p><%= social_share_button_tag(@post.title) %></p>
           <hr>
 
           <!-- Preview Image -->
