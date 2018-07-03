@@ -74,3 +74,4 @@ gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'social-share-button'
+gem 'rails_12factor', group: :production
