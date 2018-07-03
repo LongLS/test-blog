@@ -41,7 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 group :production do
-  gem 'pg'
+  
 end
 
 group :development do
@@ -75,3 +75,4 @@ gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'boots
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'social-share-button'
 gem 'rails_12factor', group: :production
+gem 'pg'
